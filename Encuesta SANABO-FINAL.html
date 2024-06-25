@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head> <!-- TITLE & LINKS TO STYLESHEETS ANS SCRIPTS(IF APPLY)-->
+    <meta charset="UTF-8">
+    <title>HR Performance | Encuesta de Clima Laboral</title>
+    <!-- <link rel="stylesheet" href="survey_styles.css"> -->
+  </head>
+
+  <body>
+
+    <header> <!-- MY LOGO & VARIABLES-->
+      <!-- HR PERFORMANCE LOGO-->
+      <img src="https://www.hr-performance.com/wp-content/uploads/logo1.png" alt="Logo" id="myLogo">
+
+        <!-- ****************** START *********************-->
+        <!-- **********************************************-->
+        <!-- VARIABLE VALUES - CHANGE THE "value" attribute-->
+        <!-- **********************************************-->
+        <!-- ****************** START *********************-->
+
+          <input type="hidden" id="surveyName" value="Encuestas_Final">
+
+          <input type="hidden" id="customerLogoValue" value="https://media.licdn.com/dms/image/D4D0BAQGbmUvEppwfpQ/company-logo_200_200/0/1697831822478?e=2147483647&v=beta&t=8L_xRc3FmFjiBafWLW938MUAwkpqfa-uXIVCa0Tw_hg">   <!-- Customer Logo -->  
+          <input type="hidden" id="surveyDueDateValue" value="08-07-2024">                                                                                                                                   <!-- date which you have to have the survey completed -->
+          <input type="hidden" id="customerLogoHeightValue" value="180">                                                                                                                                     <!-- Customer Logo Height -->
+          <input type="hidden" id="customerNameValue" value="SANABO">                                                                                                                                   <!-- Customer Name -->
+          <input type="hidden" id="otherOptionsPlaceholderValue" value="Indique sus Opciones...">                                                                                                            <!-- Placeholder for other options -->
+          <input type="hidden" id="anotherOptionsPlaceholderValue" value="¿Cuáles son aquellas cosas que debemos conservar?">                                                                                                <!-- Placeholder for another options -->
+          <input type="hidden" id="suggestionsPlaceholderValue" value="Te leemos....">                                                                                                      <!-- Placeholder for suggestions -->
+          <input type="hidden" id="backgroundGradientColorValue" value="#00ADE4">                                                                                                                              <!-- theme color  -->
+
+          <input type="hidden" id="sectionsToHide" value=""> <!-- Here you have to fill with the sections you want to hide, values separated by pipe(|), ej: TheCompany|InternalCommunication|YourWorkTeam|YourDirectSupervisor|CompanyEnvironmentAndConditions|You-->
+
+          <!-- ************************************************************************************************************************************************************************************************************************* -->
+          <!-- if you want to hide any specific question inside a section, you have to put the number(1,2,4,5...) of the question inside the section, the number corresponds with the order in wich the questions are shown in the screen-->
+          <!-- ************************************************************************************************************************************************************************************************************************* -->
+          <input type="hidden" id="TheCompanyQuestionsToHide" value="">                       <!-- question numbers to hide for "TheCompany" section separated by pipe(|) in case you have more than one, ej: 2|4 -->
+          <input type="hidden" id="InternalCommunicationQuestionsToHide" value="">            <!-- question numbers to hide for "InternalCommunication" section separated by pipe(|) in case you have more than one, ej: 1|3 -->
+          <input type="hidden" id="YourWorkTeamQuestionsToHide" value="">                     <!-- question numbers to hide for "YourWorkTeam" section separated by pipe(|) in case you have more than one, ej: 3|5 -->
+          <input type="hidden" id="YourDirectSupervisorQuestionsToHide" value="">             <!-- question numbers to hide for "YourDirectSupervisor" section separated by pipe(|) in case you have more than one, ej: 1|2 -->
+          <input type="hidden" id="CompanyEnvironmentAndConditionsQuestionsToHide" value="">  <!-- question numbers to hide for "CompanyEnvironmentAndConditions" section separated by pipe(|) in case you have more than one, ej: 1|2|3 -->
+          <input type="hidden" id="YouQuestionsToHide" value="">                              <!-- question numbers to hide for "You" section separated by pipe(|) in case you have more than one, ej: 2|3|4 -->
+
+          <!-- ************************************************************************************************************************************************************************************************************************* -->
+          <!-- if you want to use an specific color for the section, put either the hexa code or color name in the value of the folowing variables -->
+          <!-- ************************************************************************************************************************************************************************************************************************* -->
+          <input type="hidden" id="TheCompanyQuestionsSectionColor" value="white">                   
+          <input type="hidden" id="InternalCommunicationQuestionsSectionColor" value="#00ADE4">            
+          <input type="hidden" id="YourWorkTeamQuestionsSectionColor" value="lightgrey">                     
+          <input type="hidden" id="YourDirectSupervisorQuestionsSectionColor" value="grey">             
+          <input type="hidden" id="CompanyEnvironmentAndConditionsQuestionsSectionColor" value="lightblue">  
+          <input type="hidden" id="YouSectionColor" value="grey">    
+
+        <!-- ******************* END **********************-->
+        <!-- **********************************************-->
+        <!-- VARIABLE VALUES - CHANGE THE "value" attribute-->
+        <!-- **********************************************-->
+        <!-- ******************* END **********************-->
+    </header>
+
+    <main> <!-- THE ENTIRE CONTENT INCLUDING TITLE, HEADER, INTRODUCTION, GOOGLE FORM -->
+
+      <div id="mainBanner">
+        <h2>Encuesta de Clima Laboral</h2>
+        <img id="customerLogo" class="customer-logo" alt="Logo Empresa" >
+      </div>
+
+      <div>
+        <p class="text-justified">Estimado/a Colaborador/a: </p>
+          <p class="text-justified padding-all-2-pct">
+        Deseamos contar con tu opinión para disponer de una herramienta que nos ayudará a evaluar nuestra realidad como empresa y nos permitirá seguir mejorando.
+        Para ello hemos elaborado una encuesta de clima la cual consta de una serie de preguntas sencillas, cuya respuesta sólo te demandará algunos minutos. Cada pregunta posee entre tres a cinco opciones de respuesta y deberás marcar una sola de ellas.
+        Hemos contemplado seis áreas específicas: La empresa, comunicación interna, tu equipo de trabajo, tu jefe directo, condiciones y medio ambiente de trabajo y Vos. 
+          <p class="text-centered">Tendrás tiempo para contestarla hasta el lunes <span id="surveyDueDate"></span>, (inclusive).</p> 
+          <p class="text-justified padding-all-2-pct">
+            Por último, te contamos que la encuesta será tratada con confidencialidad y de manera anónima (no te pediremos informacion personal, ni mail de registro), por lo cual te solicitamos realizarla con honestidad y a conciencia, dado que el único fin, es tener una muestra de nuestra realidad como empresa y evaluar puntos de mejora.
+            Muchas gracias..</p> <br>
+      </div>
+      <script>var submitted = false;</script>
+      <!-- ACA ES DONDE DEBES PERSONALIZAR CON LAS VARIABLES DE GOOGLE FORMS-->
+      <iframe style="display: none;" id="thanksPageFrame" name="thanksPageFrame" onload="if(submitted){goToThanksPage();}"></iframe>
+      <form id="mainForm" action="https://docs.google.com/forms/d/e/1FAIpQLScBX8kL-wFqFR0RwwMjmRnd8Nd8gr8nJMQ2p6nhy8MKnqbu-A/formResponse" method="post" target="thanksPageFrame" onsubmit="submitted=true"> 
+      <!-- <form id="mainForm" action="https://docs.google.com/forms/d/e/1FAIpQLScBX8kL-wFqFR0RwwMjmRnd8Nd8gr8nJMQ2p6nhy8MKnqbu-A/formResponse">  -->
+
+            <!-- INICIO DE PREGUNTAS Y RESPUESTAS DEL FORMULARIO -->
+            <div id="TheCompany" class="survey-component"> 
+    
+              <h1><b>LA EMPRESA</b></h1>
+              <hr>
+              
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Conocés la misión, visión y valores de <span class="customer-name"></span>?</p>
+                </div>
+                <div class="checkbox-group text-justified" style="display: flex; justify-content: left;">
+                  <label><input type="radio" name="entry.1704373165" value="Sí, conozco la Visión, Misión y Obetivos de la empresa" section="TheCompany">Sí, conozco la Visión, Misión y Obetivos de <span class="customer-name"></span></label><br>
+                  <label><input type="radio" name="entry.1704373165" value="Conocía la Visión, Misión y Objetivos de la empresa, pero ya no recuerdo" section="TheCompany">Conocía la Visión, Misión y Objetivos de <span class="customer-name"></span>, pero ya no recuerdo</label><br>
+                  <label><input type="radio" name="entry.1704373165" value="No conozco la Visión, Misión y Objetivos de la empresa" section="TheCompany">No conozco la Visión, Misión y Objetivos de <span class="customer-name"></span></label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Cómo calificas a <span class="customer-name uppercase-text"></span> como empleador?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.305553560" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.305553560" value="Muy bueno" >Muy bueno</label> <br>
+                  <label><input type="radio" name="entry.305553560" value="Bueno">Bueno</label><br>
+                  <label><input type="radio" name="entry.305553560" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.305553560" value="Malo">Malo</label><br>
+                </div>  
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Qué tan probable es que recomiendes a un amigo, que envíe su CV a <span class="customer-name uppercase-text"></span>?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.349499540" value="Totalmente probable">Totalmente Probable</label><br>
+                  <label><input type="radio" name="entry.349499540" value="Probable" >Probable</label> <br>
+                  <label><input type="radio" name="entry.349499540" value="No lo sé, lo pensaría">No lo sé, lo pensaría</label><br>
+                  <label><input type="radio" name="entry.349499540" value="Poco Probable">Poco Probable</label><br>
+                  <label><input type="radio" name="entry.349499540" value="Nada Probable">Nada Probable</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿<span class="customer-name uppercase-text"></span> te brinda capacitación adecuada y en forma periódica?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.561120194" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.561120194" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.561120194" value="A veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.561120194" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.561120194" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Considerás que <span class="customer-name uppercase-text"></span> genera posibilidades de crecimiento y desarrollo a sus empleados?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.2083454847" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.2083454847" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.2083454847" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.2083454847" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.2083454847" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+              
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Te gustaría estar trabajando en <span class="customer-name uppercase-text"></span> dentro de 3 años?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.646103362" value="Sí, en la misma área">Sí, en la misma area</label><br>
+                  <label><input type="radio" name="entry.646103362" value="Sí, en otra área" >Sí, en otra área</label> <br>
+                  <label><input type="radio" name="entry.646103362" value="Lo tendría que pensar">Lo tendría que pensar</label><br>
+                  <label><input type="radio" name="entry.646103362" value="No, no me gustaría seguir trabajando en SANABO.">No, no me gustaria seguir trabajando en <span class="customer-name uppercase-text"></span></label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Consideras que <span class="customer-name uppercase-text"></span> trata a los empleados Justamente?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1227901969" value="SIempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1227901969" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1227901969" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1227901969" value="Casi nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1227901969" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Cuándo un empleado tiene un problema, queja o sugerencia, consideras que <span class="customer-name uppercase-text"></span> hace todo lo necesario para solucionarlo?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1340586078" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1340586078" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1340586078" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1340586078" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1340586078" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+              
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">Ante alguna consulta, ¿cómo evaluarías el nivel de atención e información brindado por la empresa?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.879050699" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.879050699" value="Muy bueno" >Muy Bueno</label> <br>
+                  <label><input type="radio" name="entry.879050699" value="Bueno">Bueno</label><br>
+                  <label><input type="radio" name="entry.879050699" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.879050699" value="Malo">Malo</label><br>
+                </div>
+              </div>
+                    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">Según tu criterio, ¿Cuál sería el medio más oportuno/adecuado para acercar la empresa?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label for="entry.323178422"><input type="radio" id="entry.323178422" name="entry.323178422" value="Mail">Mail</label><br>
+                  <label for="entry.323178422"><input type="radio" id="entry.323178422" name="entry.323178422" value="Whatsapp">Whatsapp</label><br>
+                  <label for="entry.323178422"><input type="radio" id="entry.323178422" name="entry.323178422" value="Portal del empleado">Charla Personal</label><br>
+                </div>
+              </div>    
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">De acuerdo a tu experiencia con la Dirección, ¿Tenés alguna sugerencia y/o propuesta que nos ayude a mejorar?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="checkbox" id="chkEnterpriseSuggestions" name="" value="" onclick="ToggleSectionById('chkEnterpriseSuggestions', 'txtEnterpriseSuggestions')">SUGERENCIAS:</label>
+                  <input type="text" id="txtEnterpriseSuggestions" name="entry.751430187"  class="suggestion">
+                </div>
+              </div> 
+    
+            </div>
+            
+            <div id="InternalCommunication" class="survey-component">
+              <h1><b>COMUNICACIÓN INTERNA</b></h1> <!-- COMO HAGO PARA PONER COMO UN SUBTITULO "COMUNICACION INTERNA" ***preguntar que realmente quiere***--> 
+              <hr>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Cómo evaluas los actuales canales de información y comunicación?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.941852964" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.941852964" value="Muy Bueno" >Muy Bueno</label> <br>
+                  <label><input type="radio" name="entry.941852964" value="Bueno">Bueno</label><br>
+                  <label><input type="radio" name="entry.941852964" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.941852964" value="Malo">Malo</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">De todos los canales de comunicación que posee <span class="customer-name"></span>, indica cual/es utilizás para comunicarte y/o para recibir información.</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="checkbox" name="entry.1909940110" value="Whatsapp">Whatsapp</label><br>
+                  <label><input type="checkbox" name="entry.1909940110" value="Mail" >Mail</label> <br>
+                  <label><input type="checkbox" name="entry.1909940110" value="Cartelera">Charla personal</label><br>
+                  <label><input type="checkbox" name="entry.1909940110" value="Workshops">Workday</label><br>
+                  <label><input type="checkbox" id="chkInternalComunicationMedium" name="entry.1909940110" value="__other_option__" onclick="ToggleSectionById('chkInternalComunicationMedium', 'txtInternalComunicationMedium')">OTRO:</label>
+                  <input type="text" id="txtInternalComunicationMedium" name="entry.1909940110.other_option_response"  class="other-option">
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">A la hora de informarte. ¿cómo evaluas la accesibilidad a los canales de comunicación?.</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                    <label><input type="radio" name="entry.991593808" value="Excelente">Excelente</label><br>
+                    <label><input type="radio" name="entry.991593808" value="Muy bueno" >Muy Bueno</label> <br>
+                    <label><input type="radio" name="entry.991593808" value="Bueno">Bueno</label><br>
+                    <label><input type="radio" name="entry.991593808" value="Regular">Regular</label><br>
+                    <label><input type="radio" name="entry.991593808" value="Malo">Malo</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                    <p class="text-justified">La información que recibís vinculada a las novedades de <span class="customer-name"></span>, ¿es información clara, concreta y concisa?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                    <label><input type="radio" name="entry.1110132995" value="Siempre">Siempre</label><br>
+                    <label><input type="radio" name="entry.1110132995" value="Casi Siempre" >Casi Siempre</label> <br>
+                    <label><input type="radio" name="entry.1110132995" value="A Veces">A Veces</label><br>
+                    <label><input type="radio" name="entry.1110132995" value="Casi Nunca">Casi Nunca</label><br>
+                    <label><input type="radio" name="entry.1110132995" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">De acuerdo a tu experiencia ¿Tenés alguna sugerencia para que mejoremos en la comunicación interna?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="checkbox" id="chkInternalCommunicationSuggestions" name="" value="" onclick="ToggleSectionById('chkInternalCommunicationSuggestions','txtInternalCommunicationSuggestions')">SUGERENCIAS:</label>
+                  <input type="text" id="txtInternalCommunicationSuggestions" name="entry.1570472134"  class="suggestion">
+                </div>
+              </div>
+    
+            </div>
+          
+            <div id="YourWorkTeam" class="survey-component">
+    
+              <h1><b><p>TU EQUIPO DE TRABAJO</p></b></h1>
+              <hr>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Te sentís parte de un equipo de trabajo?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.545609329" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.545609329" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.545609329" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.545609329" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.545609329" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Consideras que todos los miembros del equipo desarrollan su labor para el buen funcionamiento del sector?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1593137931" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1593137931" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1593137931" value="A Veces">A veces</label><br>
+                  <label><input type="radio" name="entry.1593137931" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1593137931" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Cómo es tu relación con el resto de las personas de tu mismo sector?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1082903364" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.1082903364" value="Muy buena" >Muy buena</label> <br>
+                  <label><input type="radio" name="entry.1082903364" value="Buena">Bueno</label><br>
+                  <label><input type="radio" name="entry.1082903364" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.1082903364" value="Mala">Mala</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Se realizan reuniones para tratar mejoras del sector?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.2078789143" value="Diariamente">Diariamente</label><br>
+                  <label><input type="radio" name="entry.2078789143" value="Semanalmente" >Semanalmente</label> <br>
+                  <label><input type="radio" name="entry.2078789143" value="Mensualmente">Mensualmente</label><br>
+                  <label><input type="radio" name="entry.2078789143" value="Semestralmente">Semestralmente</label><br>
+                  <label><input type="radio" name="entry.2078789143" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Cómo sentís el ambiente de trabajo en tu sector?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.2002317207" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.2002317207" value="Muy bueno" >Muy Bueno</label> <br>
+                  <label><input type="radio" name="entry.2002317207" value="Bueno">Bueno</label><br>
+                  <label><input type="radio" name="entry.2002317207" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.2002317207" value="Malo">Malo</label><br>
+                </div>
+              </div>
+    
+            </div>
+            
+            <div id="YourDirectSupervisor" class="survey-component">
+    
+              <h1><b><p>TU SUPERIOR DIRECTO</p></b></h1>
+              <hr>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Sentís que tu Superior/Jefe/Gerente valora tu desempeño y/o logros?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1662847041" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1662847041" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1662847041" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1662847041" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1662847041" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Tu Superior/Jefe/Gerente tiene reuniones con vos, para conversar sobre tu desempeño?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1970635608" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1970635608" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1970635608" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1970635608" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1970635608" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">Cuando surge algún cambio en el sector, ya sea por nuevas tareas, procedimientos o por rotación de personal, ¿tu Superior/Jefe/Gerente, organiza una reunión para comunicar dicho cambio?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1049176012" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1049176012" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1049176012" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1049176012" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1049176012" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Te transmite las tareas y los objetivos en forma clara y precisa?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1133872878" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1133872878" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1133872878" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1133872878" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1133872878" value="Nunca">Nunca</label><br>  
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">A la hora de una inquietud en el accionar de tus tareas, ¿consideras que podes conversarlo con tu superior abierta y honestamente?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.2012280949" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.2012280949" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.2012280949" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.2012280949" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.2012280949" value="Nunca">Nunca</label><br>   
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">En caso que el equipo de trabajo o vos propongan alguna oportunidad de mejora, la misma, ¿es tomada en cuenta por tu superior?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1245244953" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1245244953" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1245244953" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1245244953" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1245244953" value="Nunca">Nunca</label><br> 
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Te mantiene informado sobre los objetivos de <span class="customer-name"></span>?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.762981876" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.762981876" value="Casi SIempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.762981876" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.762981876" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.762981876" value="Nunca">Nunca</label><br> 
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Escucha las sugerencias que realizas?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.20832076" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.20832076" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.20832076" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.20832076" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.20832076" value="Nunca">Nunca</label><br> 
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Es flexible y criterioso en la conducción y supervisión?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1528551748" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1528551748" value="Casi SIempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1528551748" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1528551748" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1528551748" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Tiene confianza en tu trabajo, dejando que en algunos casos apliques tu criterio personal?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.519823726" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.519823726" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.519823726" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.519823726" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.519823726" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Te explica las razones de sus decisiones?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1045868301" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1045868301" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1045868301" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1045868301" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1045868301" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Te ofrece capacitación y oportunidades para tu entrenamiento? </p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.568107261" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.568107261" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.568107261" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.568107261" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.568107261" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+            </div>
+    
+            <div id="CompanyEnvironmentAndConditions" class="survey-component">
+    
+              <h1><b><p>CONDICIONES Y MEDIO AMBIENTE EN LA EMPRESA</span></p></b></h1>
+              <hr>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Consideras que dispones del equipamiento necesario para realizar correctamente tu trabajo? (Computadora, Programas, Celular, etc.)</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.836033651" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.836033651" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.836033651" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.836033651" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.836033651" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Qué evaluación haces de las siguientes instalaciones?  De la cocina o Comedor (Café, Agua, Heladera, etc)</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1738295923" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.1738295923" value="Muy Bueno" >Muy Bueno</label> <br>
+                  <label><input type="radio" name="entry.1738295923" value="Bueno">Bueno</label><br>
+                  <label><input type="radio" name="entry.1738295923" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.1738295923" value="Malo">Malo</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Comodidad del escritorio y/o ambiente de trabajo?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1797256458" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.1797256458" value="Muy Bueno" >Muy Bueno</label> <br>
+                  <label><input type="radio" name="entry.1797256458" value="Bueno">Bueno</label><br>
+                  <label><input type="radio" name="entry.1797256458" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.1797256458" value="Malo">Malo</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Equipamiento de oficina?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1520252822" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.1520252822" value="Muy bueno" >Muy Bueno</label> <br>
+                  <label><input type="radio" name="entry.1520252822" value="Bueno">Bueno</label><br>
+                  <label><input type="radio" name="entry.1520252822" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.1520252822" value="Malo">Malo</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Espacio Físico en general?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1206244167" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.1206244167" value="Muy bueno" >Muy Bueno</label> <br>
+                  <label><input type="radio" name="entry.1206244167" value="Bueno">Bueno</label><br>
+                  <label><input type="radio" name="entry.1206244167" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.1206244167" value="Malo">Malo</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Sanitarios / Vestuarios? </p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.735844319" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.735844319" value="Muy bueno" >Muy Bueno</label> <br>
+                  <label><input type="radio" name="entry.735844319" value="Bueno">Bueno</label><br>
+                  <label><input type="radio" name="entry.735844319" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.735844319" value="Malo">Malo</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Climatización/ ventilación del ambiente de trabajo? </p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.833309927" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.833309927" value="Muy bueno" >Muy Bueno</label> <br>
+                  <label><input type="radio" name="entry.833309927" value="Bueno">Bueno</label><br>
+                  <label><input type="radio" name="entry.833309927" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.833309927" value="Malo">Malo</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Iluminación del ambiente de trabajo?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1441035280" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.1441035280" value="Muy bueno" >Muy Bueno</label> <br>
+                  <label><input type="radio" name="entry.1441035280" value="Bueno">Bueno</label><br>
+                  <label><input type="radio" name="entry.1441035280" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.1441035280" value="Malo">Malo</label><br>
+              
+                </div>
+              </div>
+    
+            </div>
+    
+            <div id="You" class="survey-component">
+    
+              <h1><b><p>VOS</p></b></h1>
+              <hr>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Cuál es tu rol o cargo en <span class="customer-name"></span>?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1484095005" value="Gerente">Gerente</label><br>
+                  <label><input type="radio" name="entry.1484095005" value="Jefe" >Jefe</label> <br>
+                  <label><input type="radio" name="entry.1484095005" value="Supervisor / Responsable">Responsable</label><br>
+                  <label><input type="radio" name="entry.1484095005" value="Administrativo">Administrativo</label><br>
+                  <label><input type="radio" name="entry.1484095005" value="Comercial">Comercial</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Cuál es tu antigüedad en <span class="customer-name"></span>?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1897649267" value="Menor a 1 año">Menor a 1 año</label><br>
+                  <label><input type="radio" name="entry.1897649267" value="Entre 1 año y 3 años" >Entre 1 año y 3 años</label> <br>
+                  <label><input type="radio" name="entry.1897649267" value="Entre 3 a 5 años">Entre 3 a 5 años</label><br>
+                  <label><input type="radio" name="entry.1897649267" value="Más de 5 años">Más de 5 años</label><br>
+                </div> 
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Cuál es tu grupo de edad?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1626131993" value="Menor a 25 años">Menor a 25 años</label><br>
+                  <label><input type="radio" name="entry.1626131993" value="Entre 26 y 35 años" >Entre 26 y 35 años</label> <br>
+                  <label><input type="radio" name="entry.1626131993" value="Entre 36 y 50 años">Entre 36 y 50 años</label><br>
+                  <label><input type="radio" name="entry.1626131993" value="Igual o Mayor a 51 años">Igual o Mayor a 51 años</label><br>
+                  </div>  
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Te sentís conforme y satisfecho con tu trabajo en <span class="customer-name"></span>?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.887039257" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.887039257" value="Casi SIempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.887039257" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.887039257" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.887039257" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Cómo sentís la relación con los otros equipos de trabajo?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.413049676" value="Excelente">Excelente</label><br>
+                  <label><input type="radio" name="entry.413049676" value="Muy buena" >Muy buena</label> <br>
+                  <label><input type="radio" name="entry.413049676" value="Buena">Buena</label><br>
+                  <label><input type="radio" name="entry.413049676" value="Regular">Regular</label><br>
+                  <label><input type="radio" name="entry.413049676" value="Mala">Mala</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Consideras que tu trabajo es adecuado a tus conocimientos y capacidades?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.894698431" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.894698431" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.894698431" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.894698431" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.894698431" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Te gustaria recibir mayor formación/ capacitación?. En caso de contestar "SI", completar en que tema o área....</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.755509894" value="NO" onclick="UncheckElementbyIdAndHideUnderlyingSection('chkAboutYouColaborationInOtherArea', 'txtAboutYouColaborationInOtherArea')">NO</label> <br>
+                  <label><input type="checkbox" id="chkAboutYouColaborationInOtherArea" name="entry.755509894" value="__other_option__" onclick="ToggleSectionByIdAndUncheckRadios('chkAboutYouColaborationInOtherArea', 'txtAboutYouColaborationInOtherArea', 'entry.755509894')">Sí, TEMAS:</label><br>
+                  <input type="text" id="txtAboutYouColaborationInOtherArea" name="entry.755509894.other_option_response"  class="other-option">
+                </div>
+              </div>
+
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Te gusta el tipo de trabajo que realizas?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1222116372" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1222116372" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1222116372" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1222116372" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1222116372" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Disfrutas de tu trabajo?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1865440930" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1865440930" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1865440930" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1865440930" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1865440930" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified"> ¿Consideras que tu remuneración es acorde a tu desempeño y responsabilidades?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.730140268" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.730140268" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.730140268" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.730140268" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.730140268" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified"> ¿Tenes responsabilidades / objetivos y tareas definidas claramente?</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="radio" name="entry.1389445991" value="Siempre">Siempre</label><br>
+                  <label><input type="radio" name="entry.1389445991" value="Casi Siempre" >Casi Siempre</label> <br>
+                  <label><input type="radio" name="entry.1389445991" value="A Veces">A Veces</label><br>
+                  <label><input type="radio" name="entry.1389445991" value="Casi Nunca">Casi Nunca</label><br>
+                  <label><input type="radio" name="entry.1389445991" value="Nunca">Nunca</label><br>
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">¿Te proyectas o te ves colaborando en otra área de <span class="customer-name"></span>? En caso de contestar "SI", completar donde....</p>
+                </div>
+                <div class="checkbox-group text-justified">
+                 <label><input type="radio" name="entry.1947164208" value="SI" onclick="UncheckElementbyIdAndHideUnderlyingSection('chkAboutYouColaborationInOtherArea', 'txtAboutYouColaborationInOtherArea')">SI</label><br>  
+                 <label><input type="radio" name="entry.1947164208" value="NO" onclick="UncheckElementbyIdAndHideUnderlyingSection('chkAboutYouColaborationInOtherArea', 'txtAboutYouColaborationInOtherArea')">NO</label> <br>
+                 <label><input type="checkbox" id="chkAboutYouColaborationInOtherArea" name="entry.1947164208" value="__other_option__" onclick="ToggleSectionByIdAndUncheckRadios('chkAboutYouColaborationInOtherArea', 'txtAboutYouColaborationInOtherArea', 'entry.1947164208')">Sí, donde?</label><br>
+                  <input type="text" id="txtAboutYouColaborationInOtherArea" name="entry.1947164208.other_option_response"  class="other-option">
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">Mencioná al menos tres cuestiones que a tu criterio, deban ser conservadas en <span class="customer-name uppercase-text"><span></p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="checkbox" id="chkAboutYouEmotions" name="" value="" onclick="ToggleSectionById('chkAboutYouEmotions','txtAboutYouEmotions')">DEBEMOS CONSERVAR:</label>
+                  <input type="text" id="txtAboutYouEmotions" name="entry.979785245"  class="another-option">
+                </div>
+              </div>
+    
+              <div class="survey-sub-component" tabindex="0">
+                <div class="question">
+                  <p class="text-justified">Mencioná al menos tres cuestiones que a tu criterio, deban mejorar o modificar en <span class="customer-name uppercase-text"><span></p>
+                </div>
+                <div class="checkbox-group text-justified">
+                  <label><input type="checkbox" id="chkAboutYouSuggestions" name="" value="" onclick="ToggleSectionById('chkAboutYouSuggestions','txtAboutYouSuggestions')">DEBEMOS MEJORAR:</label>
+                  <input type="text" id="txtAboutYouSuggestions" name="entry.1477736437"  class="suggestion">
+                </div>
+              </div>
+    
+            </div> 
+    
+            <button id="submitButtonTest">Enviar</button>
+            </br>
+            <button id="submitButton" type="submit" style="visibility: hidden;">Enviar</button>
+            
+            
+          
+      </form>
+
+    </main>
+
+    <footer><!-- FOOTER: CREATED BY, ALL RIGHTS RESERVED & YEAR-->
+      
+      <img src="https://www.hr-performance.com/wp-content/uploads/logo1.png" alt="Logo" id="myLogo">
+      <div>Creado por HR Performance | Derechos Reservados &copy; <span id="currentYear"></span></div>
+      
+      <style>
+        body {
+          background-color: white;
+          margin: 0;
+          padding: 0;
+          font: 16px/1.65em "Roboto", Arial, sans-serif;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+        header {
+          color: white;
+          padding: 20px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        form {
+          margin: 20px auto;
+          box-shadow: 2px 2px 5px #888888;
+          padding: 70px;
+          width: 100%;
+          box-sizing: border-box;
+        }
+        .survey-component {
+          background: rgba(255, 255, 255, .3);
+          -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+          border: 1.5px solid rgba(209, 213, 219, 0.3);
+          padding: 3px;
+          border-radius: 20px;
+          padding-top: 10px;
+          padding-bottom: 50px;
+          margin-bottom: 50px;
+        } 
+        .survey-sub-component
+        {
+        padding-left: 30px;
+        }
+        .suggestion, .other-option, .another-option{
+          display: none;
+          width: 90% !important;
+          font: 14px "Roboto", Arial, sans-serif;
+        }
+        #myLogo {
+          width: 200px;
+          height: 60px;
+          margin-left: 2%;
+        }
+        main {
+          width: 80%;
+          margin: auto;
+          text-align: center;
+          flex: 1;
+        }
+        label {
+          margin-bottom: 10px;
+        }
+        hr{
+          width: 95%;
+          margin-bottom: 50px;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        input[type="text"],
+        input[type="radio"],
+        input[type="checkbox"],
+        textarea::placeholder {
+          color: black;
+        }
+        input[type="submit"] {
+          background-color: #25C0E6;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 13px;
+          transition: color 0.3s ease-in-out;
+        }
+        input[type="submit"]:active {
+          color: #444;
+        }
+        input[type="submit"]:hover {
+          color: #444;
+        }
+        input[type="submit"]:hover::after {
+          content: "Al presionar el botón, se enviará la encuesta";
+          position: absolute;
+          background-color: black;
+          color: white;
+          padding: 5px;
+          border-radius: 5px;
+          font-size: 12px;
+          bottom: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+        }
+        input[type="submit"]:hover::after {
+          opacity: 1;
+        }
+        footer {
+          text-align: center;
+          border-top: 2px solid #2196F3;
+          padding: 10px;
+          margin-top: auto;
+          width: 100%;
+          box-sizing: border-box;
+        }
+        /* Nuevo estilo para el logo del formulario */
+        #mainBanner {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 20px;
+        }
+        span {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .padding-all-2-pct
+        {
+          padding: 2%;
+        }
+        .text-justified {
+            text-align: justify;  
+        }
+        .text-centered {
+            text-align: center;
+        }
+        .question {
+                text-align: center;
+                justify-content: center;
+                font-weight: bold;
+            }
+            
+      .checkbox-group {
+              display: flex;
+                flex-direction: column;
+                align-items: left;
+                justify-content: left;
+            }
+            
+      .checkbox-group input[type="radio"] {
+                margin-right: 5px;
+            }
+      img.customer-logo {
+          width: 180px;
+          height: 27px;
+      }
+      .uppercase-text
+      {
+        text-transform: uppercase;
+      }
+      ::placeholder{
+        color: lightslategray;
+      }
+      </style>
+    </footer>
+
+    <!-- JAVASCRIPT TO MANAGE & ADD FUNCTIONALITIES-->
+    <script> 
+      //setting values for several elements as per defined variables or default
+      var currentYear = new Date().getFullYear();
+      var backgroundGradientColorValue = document.getElementById('backgroundGradientColorValue').value;
+      document.getElementsByTagName('form')[0].style.background = 'linear-gradient(to bottom left, #ffffff, ' + backgroundGradientColorValue + ' )';
+      document.getElementsByTagName('header')[0].style.background = 'linear-gradient(to right, #ffffff, ' + backgroundGradientColorValue + ' )';
+      document.getElementById('currentYear').innerHTML = currentYear;
+      document.getElementById('surveyDueDate').innerHTML = document.getElementById('surveyDueDateValue').value;
+      document.getElementById('customerLogo').src = document.getElementById('customerLogoValue').value;
+      document.getElementById('customerLogo').style.height = document.getElementById('customerLogoHeightValue').value + 'px';
+
+      //**************************************************************************************** Sections colors ******************************************************************************************
+      var theCompanyBackgroundGradientColor = document.getElementById('TheCompanyQuestionsSectionColor').value;
+      if(IsValidObjec(theCompanyBackgroundGradientColor))
+        document.getElementById('TheCompany').style.background = 'linear-gradient(to right, #ffffff, ' + theCompanyBackgroundGradientColor + ' )';
+
+      var internalCommunicationBackgroundGradientColor = document.getElementById('InternalCommunicationQuestionsSectionColor').value;
+      if(IsValidObjec(internalCommunicationBackgroundGradientColor))
+        document.getElementById('InternalCommunication').style.background = 'linear-gradient(to right, #ffffff, ' + internalCommunicationBackgroundGradientColor + ' )';
+      
+      var yourWorkTeamBackgroundGradientColor = document.getElementById('YourWorkTeamQuestionsSectionColor').value;
+      if(IsValidObjec(yourWorkTeamBackgroundGradientColor))
+        document.getElementById('YourWorkTeam').style.background = 'linear-gradient(to right, #ffffff, ' + yourWorkTeamBackgroundGradientColor + ' )';
+
+      var yourDirectSupervisorBackgroundGradientColor = document.getElementById('YourDirectSupervisorQuestionsSectionColor').value;
+      if(IsValidObjec(yourDirectSupervisorBackgroundGradientColor))
+        document.getElementById('YourDirectSupervisor').style.background = 'linear-gradient(to right, #ffffff, ' + yourDirectSupervisorBackgroundGradientColor + ' )';
+
+      var companyEnvironmentAndConditionsBackgroundGradientColor = document.getElementById('CompanyEnvironmentAndConditionsQuestionsSectionColor').value;
+      if(IsValidObjec(companyEnvironmentAndConditionsBackgroundGradientColor))
+        document.getElementById('CompanyEnvironmentAndConditions').style.background = 'linear-gradient(to right, #ffffff, ' + companyEnvironmentAndConditionsBackgroundGradientColor + ' )';
+
+      var youBackgroundGradientColor = document.getElementById('YouSectionColor').value;
+      if(IsValidObjec(youBackgroundGradientColor))
+        document.getElementById('You').style.background = 'linear-gradient(to right, #ffffff, ' + youBackgroundGradientColor + ' )';
+      //**************************************************************************************** Sections colors ******************************************************************************************
+
+
+      //styles/attributes for elements with "customer-name" class as per variables
+      var names = document.getElementsByClassName('customer-name');
+      for(var i=0; i<names.length; i++) 
+        names.item(i).innerText = document.getElementById('customerNameValue').value;
+
+      //styles/attributes for elements with "other-option" class as per variables
+      var otherOptions = document.getElementsByClassName('other-option');
+      for(var i=0; i<otherOptions.length; i++) 
+        otherOptions.item(i).placeholder = document.getElementById('otherOptionsPlaceholderValue').value;
+
+      //styles/attributes for elements with "another-option" class as per variables
+      var anotherOptions = document.getElementsByClassName('another-option');
+      for(var i=0; i<anotherOptions.length; i++) 
+      anotherOptions.item(i).placeholder = document.getElementById('anotherOptionsPlaceholderValue').value;
+
+      //styles/attributes for elements with "suggestion" class as per variables
+      var suggestions = document.getElementsByClassName('suggestion');
+      for(var i=0; i<suggestions.length; i++) 
+        suggestions.item(i).placeholder = document.getElementById('suggestionsPlaceholderValue').value;
+
+        var thanksPageHeader = '<html><head><title>HR Performance | Gracias por participar</title></head>'
+        var thanksPageBody = '<body><div class="main-content"><div class="strip">Respuesta registrada.</div><br/><br/><br/><div class="title">¡¡GRACIAS POR PARTICIPAR DE LA ENCUESTA!!<br/><br/><img style="width:250px;padding-left:400px;" src="https://www.hr-performance.com/wp-content/uploads/logo1.png"></div><div style="display: none;"><a href=\'./' + document.getElementById('surveyName').value + '.html\'>Enviar otra respuesta</a></div></div><div style="width: 410px; height: 25px; padding-top: 5px; margin: 0 auto;text-align: center; background: white;">Creado por HR Performance | Derechos Reservados &copy; ' + currentYear + '</div></body>'
+        var thanksPageStyleTag = '<style>body{background: #c6e6f7;}.main-content {text-align: center;border: 1px solid lightGrey;width: 800px;margin: 0 auto;height: 300px; border-radius: 5px; background: white;}.title {font-weight:bold; width:550px; margin: 0 auto; font-size: 24pt;font-family: \'docs-Roboto\', Helvetica, Arial, sans-serif;}.strip{background:#549ec7;height:30px;padding-top:10px;padding-left:10px; text-align:left; color: white;}</style>'
+        var thanksPageFooter = '</div></html>'
+      var thanksPageContent = thanksPageHeader + thanksPageBody +  thanksPageStyleTag + thanksPageFooter;
+
+      function goToThanksPage(){
+        setTimeout(function(){document.write(thanksPageContent),70000})
+      }  
+
+      //function to validate if an object isValid -> not null, not undefined, not empty
+      function IsValidObjec(obj)
+      {
+        return obj != undefined && obj != null && obj != '';
+      }
+      //Function to Show/hide elements by chkId and elemId
+      function ToggleSectionById(triggerId, sectionId)
+      {
+        var trigger = document.getElementById(triggerId);
+        var isChecked = document.getElementById(triggerId).checked;
+        var sectionDisplayValue = isChecked ? 'inline-block' : 'none';
+        document.getElementById(sectionId).style.display = sectionDisplayValue;        
+      }
+
+      function ToggleSectionByIdAndUncheckRadios(triggerId, sectionId, radioNameId)
+      {
+        ToggleSectionById(triggerId, sectionId);
+        var radios = document.querySelectorAll('input[name="' + radioNameId + '"][type="radio"]');
+        for(var i=0; i<radios.length; i++)    
+          radios.item(i).checked = false;
+      }
+
+      function UncheckElementbyIdAndHideUnderlyingSection(elemIdToUncheck, sectionsToHide){
+        document.getElementById(elemIdToUncheck).checked = false;
+        document.getElementById(sectionsToHide).value = '';
+        document.getElementById(sectionsToHide).style.display = 'none';
+      }
+      function ShowSectionByRadioButtonValue(obj, matchValueToShowSection, sectioIdToShow)
+      {
+        section = document.getElementById(sectioIdToShow);
+         obj.value == matchValueToShowSection ? section.style.display = 'inline-block' : section.style.display = 'none';
+      }
+
+      //Sections to Hide as per indicated in "variable" sectionsToHide
+      var sectionsToHide = document.getElementById('sectionsToHide').value.split('|');
+      var sectionsToHideCount = sectionsToHide.length;
+      if(document.getElementById('sectionsToHide').value != '' && document.getElementById('sectionsToHide').value != null && sectionsToHideCount > 0)
+      {
+        for(var i=0; i<sectionsToHideCount; i++) 
+          document.getElementById(sectionsToHide[i]).style.display = 'none';
+      }
+      
+      // TheCompany Questions to Hide as per values inicted in varaible "TheCompanyQuestionsToHide"
+      var TheCompanyQuestionsToHideValue = document.getElementById('TheCompanyQuestionsToHide').value;
+      var TheCompanyQuestionsToHide = TheCompanyQuestionsToHideValue.split('|');
+      var TheCompanyQuestionsToHideCount = TheCompanyQuestionsToHide.length;
+      if(TheCompanyQuestionsToHideValue != '' && TheCompanyQuestionsToHideValue != null && TheCompanyQuestionsToHideCount > 0)
+      {
+        for(var i=0; i < TheCompanyQuestionsToHideCount; i++) 
+          document.querySelectorAll('#TheCompany .survey-sub-component')[TheCompanyQuestionsToHide[i]-1].style.display = 'none';
+      }
+
+      // InternalCommunication Questions to Hide as per values inicted in varaible "InternalCommunicationQuestionsToHide"
+      var InternalCommunicationQuestionsToHideValue = document.getElementById('InternalCommunicationQuestionsToHide').value;
+      var InternalCommunicationQuestionsToHide = InternalCommunicationQuestionsToHideValue.split('|');
+      var InternalCommunicationQuestionsToHideCount = InternalCommunicationQuestionsToHide.length;
+      if(InternalCommunicationQuestionsToHideValue != '' && InternalCommunicationQuestionsToHideValue != null && InternalCommunicationQuestionsToHideCount > 0)
+      {
+        for(var i=0; i < InternalCommunicationQuestionsToHideCount; i++) 
+          document.querySelectorAll('#InternalCommunication .survey-sub-component')[InternalCommunicationQuestionsToHide[i]-1].style.display = 'none';
+      }
+      
+
+      // YourWorkTeam Questions to Hide as per values inicted in varaible "YourWorkTeamQuestionsToHide"
+      var YourWorkTeamQuestionsToHideValue = document.getElementById('YourWorkTeamQuestionsToHide').value;
+      var YourWorkTeamQuestionsToHide = YourWorkTeamQuestionsToHideValue.split('|');
+      var YourWorkTeamQuestionsToHideCount = YourWorkTeamQuestionsToHide.length;
+      if(YourWorkTeamQuestionsToHideValue != '' && YourWorkTeamQuestionsToHideValue != null && YourWorkTeamQuestionsToHideCount > 0)
+      {
+        for(var i=0; i < YourWorkTeamQuestionsToHideCount; i++) 
+          document.querySelectorAll('#YourWorkTeam .survey-sub-component')[YourWorkTeamQuestionsToHide[i]-1].style.display = 'none';
+      }
+
+      // YourDirectSupervisor Questions to Hide as per values inicted in varaible "YourDirectSupervisorQuestionsToHide"
+      var YourDirectSupervisorQuestionsToHideValue = document.getElementById('YourDirectSupervisorQuestionsToHide').value;
+      var YourDirectSupervisorQuestionsToHide = YourDirectSupervisorQuestionsToHideValue.split('|');
+      var YourDirectSupervisorQuestionsToHideCount = YourDirectSupervisorQuestionsToHide.length;
+      if(YourDirectSupervisorQuestionsToHideValue != '' && YourDirectSupervisorQuestionsToHideValue != null && YourDirectSupervisorQuestionsToHideCount > 0)
+      {
+        for(var i=0; i < YourDirectSupervisorQuestionsToHideCount; i++) 
+          document.querySelectorAll('#YourDirectSupervisor .survey-sub-component')[YourDirectSupervisorQuestionsToHide[i]-1].style.display = 'none';
+      }
+
+      // CompanyEnvironmentAndConditions Questions to Hide as per values inicted in varaible "CompanyEnvironmentAndConditionsQuestionsToHide"
+      var CompanyEnvironmentAndConditionsQuestionsToHideValue = document.getElementById('CompanyEnvironmentAndConditionsQuestionsToHide').value;
+      var CompanyEnvironmentAndConditionsQuestionsToHide = CompanyEnvironmentAndConditionsQuestionsToHideValue.split('|');
+      var CompanyEnvironmentAndConditionsQuestionsToHideCount = CompanyEnvironmentAndConditionsQuestionsToHide.length;
+      if(CompanyEnvironmentAndConditionsQuestionsToHideValue != '' && CompanyEnvironmentAndConditionsQuestionsToHideValue != null && CompanyEnvironmentAndConditionsQuestionsToHideCount > 0)
+      {
+        for(var i=0; i < CompanyEnvironmentAndConditionsQuestionsToHideCount; i++) 
+          document.querySelectorAll('#CompanyEnvironmentAndConditions .survey-sub-component')[CompanyEnvironmentAndConditionsQuestionsToHide[i]-1].style.display = 'none';
+      }
+
+      // You Questions to Hide as per values inicted in varaible "YouQuestionsToHide"
+      var YouQuestionsToHideValue = document.getElementById('YouQuestionsToHide').value;
+      var YouQuestionsToHide = YouQuestionsToHideValue.split('|');
+      var YouQuestionsToHideCount = YouQuestionsToHide.length;
+      if(YouQuestionsToHideValue != '' && YouQuestionsToHideValue != null && YouQuestionsToHideCount > 0)
+      {
+        for(var i=0; i < YouQuestionsToHideCount; i++) 
+          document.querySelectorAll('#You .survey-sub-component')[YouQuestionsToHide[i]-1].style.display = 'none';
+      }
+
+      document.getElementById("submitButtonTest").addEventListener("click", function(event) {
+        debugger
+        event.preventDefault();
+        ValidateFormAndSubmit();
+        // Additional code here if needed
+      });
+
+      var firstMissingQuestion = null;
+
+      function ValidateFormAndSubmit()
+      {
+        debugger
+        firstMissingQuestion = null;
+        var theCompanyQuestionsCount = 11;
+        var internalCommunicationQuestionsCount =  5;
+        var yourWorkTeamQuestionsCount = 5;          
+        var yourDirectSupervisorQuestionsCount =   12;
+        var companyEnvironmentAndConditionsQuestionsCount = 8;
+        var youSectionColorQuestionsCount = 14;
+        var uncomplete1 = false;
+        var uncomplete2 = false;
+        var uncomplete3 = false;
+        var uncomplete4 = false;
+        var uncomplete5 = false;
+        var uncomplete6 = false;
+        
+        uncomplete1 = ValidateSectionForm('TheCompany', theCompanyQuestionsCount);
+        uncomplete2 = ValidateSectionForm('InternalCommunication', internalCommunicationQuestionsCount);
+        uncomplete3 = ValidateSectionForm('YourWorkTeam', yourWorkTeamQuestionsCount);
+        uncomplete4 = ValidateSectionForm('YourDirectSupervisor', yourDirectSupervisorQuestionsCount);
+        uncomplete5 = ValidateSectionForm('CompanyEnvironmentAndConditions', companyEnvironmentAndConditionsQuestionsCount);
+        uncomplete6 = ValidateSectionForm('You', youSectionColorQuestionsCount);
+  
+        if(uncomplete1 || uncomplete2 || uncomplete3 || uncomplete4 || uncomplete5 || uncomplete6  )
+        {
+            debugger
+            firstMissingQuestion.focus();
+            alert('Datos Incompletos, revisar las preguntas marcadas en Rojo');
+        }          
+        else                
+          document.getElementById('submitButton').click();
+
+      }
+
+      function ValidateSectionForm(sectionId, questionsQuantity)
+      {
+        var thisUncomplete = false;
+        if (document.querySelector('#' + sectionId).style.display != 'none')
+        {
+          for(var currentQuestionIndex = 0; currentQuestionIndex < questionsQuantity; currentQuestionIndex++)
+          {
+            var currentQuestion = document.querySelectorAll('#' + sectionId + ' .survey-sub-component')[currentQuestionIndex];
+            var currentQuestionInputType = currentQuestion.querySelectorAll('input')[0].type;
+            var currentQuestionTilte = currentQuestion.querySelector('div.question p');
+            currentQuestionTilte.style.color = 'black';
+            if(currentQuestion.style.display != 'none' && (currentQuestionInputType == 'radio' || currentQuestionInputType == 'checkbox'))
+            {
+              var filled = false;
+              var inputs = document.querySelectorAll('#' + sectionId + ' .survey-sub-component')[currentQuestionIndex].querySelectorAll('input, textarea');
+
+              for(const input of inputs)
+              {
+                if((input.type == 'radio' || input.type =='checkbox') && input.checked)
+                  filled = true;
+
+                if((input.type =='text' || input.type =='textarea') && input.style.display =='inline-block' && input.value == '' )
+                  filled = false;
+                // else if((input.type =='text' || input.type =='textarea') && input.value == '' )
+                // {
+                //   console.log('entro al textarea');
+                //   filled = false;
+                // }
+              }
+
+              if(!filled)
+              {
+                thisUncomplete = true;
+                currentQuestionTilte.style.color = 'red';
+                if(firstMissingQuestion == null)
+                    firstMissingQuestion = currentQuestion;
+              }
+            }
+          }
+        }
+        return thisUncomplete ;
+      }
+
+    </script>
+
+  </body>
+</html>
+
+
+
